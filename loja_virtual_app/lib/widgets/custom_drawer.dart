@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:loja_virtual_app/tiles/drawer_tile.dart';
 
 class CustomDrawer extends StatelessWidget {
   @override
@@ -20,7 +21,7 @@ class CustomDrawer extends StatelessWidget {
             children: [
               Container(
                 margin: EdgeInsets.only(bottom: 8.0),
-                padding: EdgeInsets.fromLTRB(0.0, 25.0, 16.0, 8.0),
+                padding: EdgeInsets.fromLTRB(0.0, 25.0, 16.0, 0.0),
                 height: 170.0,
                 child: Stack(
                   children: [
@@ -43,18 +44,26 @@ class CustomDrawer extends StatelessWidget {
                               style: TextStyle(
                                   fontSize: 22.0, fontWeight: FontWeight.bold),
                             ),
-                            Text(
-                              'Entre ou Cadastre-se >',
-                              style: TextStyle(
-                                  color: Theme.of(context).primaryColor,
-                                  fontSize: 20.0,
-                                  fontWeight: FontWeight.bold),
+                            GestureDetector(
+                              child: Text(
+                                'Entre ou Cadastre-se >',
+                                style: TextStyle(
+                                    color: Theme.of(context).primaryColor,
+                                    fontSize: 20.0,
+                                    fontWeight: FontWeight.bold),
+                              ),
+                              onTap: () {},
                             )
                           ],
                         ))
                   ],
                 ),
-              )
+              ),
+              Divider(),
+              DrawerTile(Icons.home, 'Início'),
+              DrawerTile(Icons.list, 'Produtos'),
+              DrawerTile(Icons.location_on, 'Lojas'),
+              DrawerTile(Icons.playlist_add_check, 'Meus Pedidos'),
             ],
           )
         ],
